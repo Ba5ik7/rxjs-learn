@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rxjs-learn';
+
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+
+  constructor() {}
+
 }
