@@ -14,13 +14,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+
+// Comton Shared Components
+import { SideNavComponent } from './shared/components/side-nav-items/side-nav-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidenavComponent
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

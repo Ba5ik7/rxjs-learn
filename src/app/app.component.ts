@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AppService } from './shared/services/app.service';
+import { Component, ViewChild } from '@angular/core';
 
+import { MatSidenav } from '@angular/material/sidenav';
+// Services
+import { AppService } from './shared/services/app.service';
+import { SideNavService } from './shared/services/side-nav.service';
 // Interfaces
 import { SideNavItem } from './shared/interfaces/side-nav-item';
 
@@ -12,11 +14,23 @@ import { SideNavItem } from './shared/interfaces/side-nav-item';
 })
 export class AppComponent {
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  // It is because TypeScript 2.7 includes a strict class checking where all
+  // the properties should be initialized in the constructor. A workaround 
+  // is to add the ! as a postfix to the variable name:
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
   sideNavItems: SideNavItem[] = [];
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService, private sideNavService: SideNavService) {
     appService.sideNavItems.subscribe((data) => this.sideNavItems = data);
+
+    this.sideNavService.sideNavToggle$.subscribe(() => this.sidenav.toggle());
+    this.sideNavService.sideNavOpen$.subscribe(() => this.sidenav.open());
+    this.sideNavService.sideNavClose$.subscribe(() => this.sidenav.close());
+  }
+
+  sideNavToggle() {
+    this.sideNavService.toggleSideNav();
   }
 
 }
