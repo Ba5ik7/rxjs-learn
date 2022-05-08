@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CombineallComponent } from './combineall/combineall.component';
 import { OperatorsComponent } from './operators.component';
 
 const routes: Routes = [
@@ -9,10 +8,14 @@ const routes: Routes = [
     component: OperatorsComponent,
     children: [
       {
-          path: 'combineall',
-          component: CombineallComponent
+          path: 'combination',
+          loadChildren: () => import('./combination/combination.module').then(m => m.CombinationModule)
+      },
+      {
+        path: 'conditional',
+        loadChildren: () => import('./conditional/conditional.module').then(m => m.ConditionalModule)
       }
-  ]
+    ]
   },
 ];
 
