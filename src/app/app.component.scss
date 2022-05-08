@@ -17,13 +17,6 @@ h1.app-name {
     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
 }
-  
-.sidenav-content {
-  margin: 42px auto;
-  max-width: 680px;
-  min-height: 100vh;
-}
-
 
 .sidenav {
   width: 200px;

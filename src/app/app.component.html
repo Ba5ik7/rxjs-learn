@@ -5,7 +5,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="app-sidenav-container">
-    <mat-sidenav #sidenav class="sidenav" fixed>
+    <mat-sidenav #sidenav [mode]="'side'" [opened]="true">
       <side-nav-items [sideNavItems]="sideNavItems"></side-nav-items>
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
