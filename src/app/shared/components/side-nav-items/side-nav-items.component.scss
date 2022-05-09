@@ -1,0 +1,22 @@
+:host {
+
+  ::ng-deep {
+    .mat-expansion-panel {
+      box-shadow: none;
+      margin: 0px;
+    }
+
+    .mat-expansion-panel-spacing {
+      margin: 0;
+    }
+    
+    .mat-expansion-panel-body {
+      padding: 0 0 0 16px;
+    }
+
+    .sub-side-nav-items mat-expansion-panel > mat-expansion-panel-header.mat-expanded {
+      height: 48px;
+    } 
+  }
+}
+

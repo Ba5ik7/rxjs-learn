@@ -14,5 +14,4 @@ export class SideNavComponent {
   constructor(private sideNavService: SideNavService) {
 
   }
-
 }

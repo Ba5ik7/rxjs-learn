@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home.component';
 
 import { LayoutModule } from '@angular/cdk/layout';
 
+
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -31,6 +33,7 @@ import { SideNavComponent } from './shared/components/side-nav-items/side-nav-it
     HttpClientModule,
     LayoutModule,
     MatButtonModule,
+    MatExpansionModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,
