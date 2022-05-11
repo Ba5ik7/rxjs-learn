@@ -19,12 +19,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Comton Shared Components
 import { SideNavComponent } from './shared/components/side-nav-items/side-nav-items.component';
+import { MatchUrlSegmentPipe } from './shared/pipes/match-url-segment.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SideNavComponent
+    SideNavComponent,
+    MatchUrlSegmentPipe
   ],
   imports: [
     BrowserModule,
