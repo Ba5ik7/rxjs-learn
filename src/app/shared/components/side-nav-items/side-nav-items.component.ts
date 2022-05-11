@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { SideNavItem } from '../../interfaces/side-nav-item';
-import { SideNavService } from '../../services/side-nav.service';
 
 @Component({
   selector: 'side-nav-items',
@@ -11,7 +10,5 @@ export class SideNavComponent {
 
   @Input() sideNavItems: SideNavItem[] = [];
 
-  constructor(private sideNavService: SideNavService) {
-
-  }
+  constructor() {}
 }
