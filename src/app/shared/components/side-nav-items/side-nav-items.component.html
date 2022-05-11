@@ -1,18 +1,10 @@
-<mat-accordion multi>
-  <ng-template #recursiveList let-sideNavItems>
-    <mat-expansion-panel 
-      *ngFor="let item of sideNavItems" 
-      [hideToggle]="item.subSideNavItems ? item.subSideNavItems.length < 0 : true">
-      <mat-expansion-panel-header>
-        <button mat-button [routerLink]="item.link">{{item.name}}</button>
-      </mat-expansion-panel-header>
-      <div 
-        class="sub-side-nav-items" 
-        *ngIf="item.subSideNavItems ? item.subSideNavItems.length > 0 : false"
-        multi>
-        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.subSideNavItems }"></ng-container>
-      </div>
-    </mat-expansion-panel>
-  </ng-template>
-  <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: sideNavItems }"></ng-container>
-</mat-accordion>
+<ng-template #recursiveList let-sideNavItems>
+  <mat-expansion-panel *ngFor="let item of sideNavItems"
+    [hideToggle]="item.subSideNavItems ? item.subSideNavItems.length < 0 : true">
+    <mat-expansion-panel-header [routerLink]="item.link">{{item.name}}</mat-expansion-panel-header>
+    <div class="sub-side-nav-items" *ngIf="item.subSideNavItems ? item.subSideNavItems.length > 0 : false">
+      <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.subSideNavItems }"></ng-container>
+    </div>
+  </mat-expansion-panel>
+</ng-template>
+<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: sideNavItems }"></ng-container>
